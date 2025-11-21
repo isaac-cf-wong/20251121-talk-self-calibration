@@ -8,7 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
 
-    <title>Presentation Template</title>
+    <title>
+      Bayesian Calibration of Gravitational-Wave Detectors Using Null Streams
+      Without Waveform Assumptions
+    </title>
     <meta
       name="description"
       content="A modern presentation built with reveal.js"
@@ -16,7 +19,11 @@
     <meta name="author" content="Your Name" />
 
     <!-- Favicon (early for quick load) -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://github.com/favicon.ico"
+    />
 
     <!-- Critical CSS (reveal.js core) -->
     <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css" />
@@ -49,192 +56,1007 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css" />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
 
   <body>
     <div class="reveal">
       <div class="slides">
         <!-- Title Slide -->
-        <section
-          data-background-gradient="linear-gradient(to bottom, #283048, #859398)"
-        >
-          <h1>Presentation Template</h1>
-          <h3>Built with reveal.js</h3>
+        <section>
+          <div class="logos">
+            <img
+              src="images/leuven_gravity_institute.png"
+              alt="Leuven Gravity Institute"
+            />
+            <img src="images/stadius_b_bg.png" alt="Stadius" />
+            <img src="images/utrecht_university.png" alt="Utrecht University" />
+            <img src="images/nikhef_logo.png" alt="NIKHEF" />
+          </div>
+          <h4
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <span>
+              Bayesian Calibration of Gravitational-Wave Detectors Using Null
+              Streams Without Waveform Assumptions
+              <a
+                href="https://isaac-cf-wong.github.io/20251121-talk-self-calibration"
+                target="_blank"
+                style="color: inherit; text-decoration: none; font-size: 1em"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <br />
+              <small
+                ><a href="https://arxiv.org/abs/2510.06327"
+                  >2510.06327</a
+                ></small
+              >
+            </span>
+          </h4>
           <p>
-            <small>Created by <span>Your Name</span></small>
-          </p>
-          <aside class="notes">
-            Welcome to your presentation template. This is the title slide. You
-            can add speaker notes here that won't be visible to the audience.
-          </aside>
-        </section>
-
-        <!-- About Section -->
-        <section>
-          <h2>About This Template</h2>
-          <ul>
-            <li class="fragment">🎯 Modern and responsive design</li>
-            <li class="fragment">📱 Works on desktop, tablet, and mobile</li>
-            <li class="fragment">🎨 Multiple themes available</li>
-            <li class="fragment">📝 Markdown support</li>
-            <li class="fragment">🖼️ Rich media support</li>
-          </ul>
-          <aside class="notes">
-            This slide demonstrates fragment animations. Each bullet point will
-            appear one by one when you advance.
-          </aside>
-        </section>
-
-        <!-- Features Section -->
-        <section>
-          <section>
-            <h2>Features</h2>
-            <p>Explore the capabilities of this template</p>
-            <p><small>↓ Navigate down to see more</small></p>
-          </section>
-
-          <section>
-            <h3>Code Highlighting</h3>
-            <pre><code data-trim data-noescape>
-function createPresentation() {
-    const slides = [
-        'Introduction',
-        'Content',
-        'Conclusion'
-    ];
-
-    return slides.map(slide => ({
-        title: slide,
-        content: 'Amazing content here!'
-    }));
-}
-                    </code></pre>
-          </section>
-
-          <section>
-            <h3>Math Support</h3>
-            <p>You can include mathematical equations:</p>
-            <p>$$E = mc^2$$</p>
-            <p>$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$</p>
-          </section>
-
-          <section>
-            <h3>Media Support</h3>
-            <div
-              style="
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-              "
+            <small
+              ><span
+                ><a
+                  href="https://orcid.org/0000-0003-2166-0027"
+                  class="orcid-link"
+                  >Isaac C. F. Wong</a
+                ></span
+              ></small
             >
-              <div>
-                <h4>Images</h4>
+            <br /><small>2025-11-21</small>
+          </p>
+          <div class="collaborators">
+            <p>
+              Collaborators:
+              <a href="https://orcid.org/0009-0002-7074-4278" class="orcid-link"
+                >Francesco Cireddu</a
+              >,
+              <a href="https://orcid.org/0000-0002-1544-7193" class="orcid-link"
+                >Milan Wils</a
+              >,
+              <a href="https://orcid.org/0009-0003-4408-5894" class="orcid-link"
+                >Tom Colemont</a
+              >,
+              <a href="https://orcid.org/0000-0001-9161-7919" class="orcid-link"
+                >Harsh Narola</a
+              >,
+              <a href="https://orcid.org/0000-0001-6800-4006" class="orcid-link"
+                >Chris Van Den Broeck</a
+              >,
+              <a href="https://orcid.org/0000-0003-4297-7365" class="orcid-link"
+                >Tjonnie G. F. Li</a
+              >
+            </p>
+          </div>
+
+          <!-- QR Code for arXiv paper -->
+          <div
+            style="position: absolute; bottom: 80px; right: 20px; z-index: 10"
+          >
+            <a
+              href="https://arxiv.org/abs/2510.06327"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://arxiv.org/abs/2510.06327"
+                alt="QR Code for arXiv paper"
+                style="
+                  width: 120px;
+                  height: 120px;
+                  border: 2px solid #fff;
+                  border-radius: 5px;
+                "
+              />
+            </a>
+          </div>
+
+          <aside class="notes">
+            <ul>
+              <li>10 seconds</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <section>
+            <h3>Motivation and ET Context</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>
+                  GW detections transform astrophysics, but calibration errors
+                  limit precision (e.g., LIGO: ~10% amplitude, ~3° phase at 100
+                  Hz)
+                </li>
+                <li>
+                  ET Challenge: 10x sensitivity demands $\lesssim 1\%$
+                  calibration for, e.g., signal detection, parameter estimation
+                  (<a href="https://arxiv.org/abs/2202.00823">Essick 2022</a>),
+                  Hubble constant measurements (<a
+                    href="https://arxiv.org/abs/2204.03614"
+                    >Huang et al. 2025</a
+                  >), black hole spectroscopy (<a
+                    href="https://arxiv.org/abs/2506.15979"
+                    >Sinha et al. 2025</a
+                  >)
+                </li>
+                <li>
+                  <b>This Work</b>: Sky-independent null streams enable
+                  non-invasive, waveform/GR-independent calibration using all GW
+                  signals
+                </li>
+              </ul>
+              <figure>
                 <img
-                  src="images/sample-image.jpg"
-                  alt="Sample"
-                  style="
-                    width: 200px;
-                    height: 150px;
-                    object-fit: cover;
-                    border-radius: 8px;
-                  "
+                  src="images/indistinguishability_10_vs_currect_waveform_accuracy_calibration_error_0308_short_n_nowh.png"
                 />
+                <figcaption>Credit:
+                  <a href="https://arxiv.org/abs/1912.10055"
+                    >Pürrer et al. 2019</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+            <aside class="notes">
+              This slide demonstrates fragment animations. Each bullet point
+              will appear one by one when you advance.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <h3>Detector Calibration Overview</h3>
+          </section>
+
+          <section data-auto-animate>
+            <h3>GW Detectors 101: What Are They?</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>Core Idea: Measure tiny spacetime ripples (strains $\sim10^{-21}$) from cosmic events like black hole mergers</li>
+                <li>Design: Michelson Interferometers—split laser, bounce off mirrors 3-10 km apart, recombine for phase shift</li>
+                <li>Key Components: Arms (perpendicular), beam splitter, mirrors (suspended, cryo-cooled in ET), photodetectors</li>
+                <li>Current: LIGO/Virgo (USA/EU, room temp.); ET Future: Underground, triangular, 10x sensitive (3-10k Hz)</li>
+              </ul>
+              <figure>
+                <img src="images/ligo_schematic.png" alt="LIGO Schematic" />
+                <figcaption>Credit:
+                  <a href="https://eng.rizvi.edu.in/humanities/exploring-the-ligo-interferometer-a-marvel-of-precision-engineering/"
+                    >Rizvi College of Engineering</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>GW Detectors 101: What Are They?</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>Core Idea: Measure tiny spacetime ripples (strains $\sim10^{-21}$) from cosmic events like black hole mergers</li>
+                <li>Design: Michelson Interferometers—split laser, bounce off mirrors 3-10 km apart, recombine for phase shift</li>
+                <li>Key Components: Arms (perpendicular), beam splitter, mirrors (suspended, cryo-cooled in ET), photodetectors</li>
+                <li>Current: LIGO/Virgo (USA/EU, room temp.); ET Future: Underground, triangular, 10x sensitive (3-10k Hz)</li>
+              </ul>
+              <figure>
+                <img src="images/einstein_telescope_triangular_layout.jpg" />
+                <figcaption>Credit:
+                  <a
+                    href="https://www.einsteintelescope-emr.eu/wp-content/uploads/2024/05/E-TEST_Conceptual-Design-Report_June_2022-reduced_size.pdf"
+                    >E-TEST Prototype</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>How Detectors Work: From Signal to Data</h3>
+            <iframe width="840" height="460" src="https://www.youtube.com/embed/UA1qG7Fjc2A?si=1J92wX4MIjVXvowD?rel=0&modestbranding=1" title="Black Hole Merger Simulation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </section>          
+
+          <section data-auto-animate>
+            <h3>Calibration Basics: What Is It?</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>A fundamental component of the success of GW observations is the precise
+calibration of interferometric data</li>
+                <li>It reconstructs the raw, digitized electrical output of the detector into an accurate and reliable measure of the dimensionless</li>
+                <li>$\tilde{d}_{\mathrm{err}}(f) = \frac{\Delta \tilde{L}_{\mathrm{free}}(f)}{R(f)}$</li>
+              </ul>              
+              <figure>
+                  <img
+                    src="images/optical_configuration_of_ligo.png"
+                    alt="LVK Calibration Schematic"
+                  />
+                  <figcaption style="font-size: 1.4rem">
+                    Credit:
+                    <a href="https://arxiv.org/abs/2005.02531">Sun et al. 2020</a>
+                  </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Calibration Basics: What Is It?</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>$\tilde{d}_{\mathrm{err}}(f) = \frac{\Delta \tilde{L}_{\mathrm{free}}(f)}{R(f)}$</li>
+                <li>$\tilde{d}_{\mathrm{err}}(f)$ is measured continuously</li>
+                <li>$\Delta \tilde{L}_{\mathrm{free}}(f)$ is the differential arm length change due to GWs</li>
+                <li>$R(f)$ is the response function of the detector, and is only fully measured infrequently during breaks</li>
+              </ul>              
+              <figure>
+                  <img
+                    src="images/optical_configuration_of_ligo.png"
+                    alt="LVK Calibration Schematic"
+                  />
+                  <figcaption style="font-size: 1.4rem">
+                    Credit:
+                    <a href="https://arxiv.org/abs/2005.02531">Sun et al. 2020</a>
+                  </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Calibration Basics: What Is It?</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>Definition: Tuning detector model to match true response: Amplitude (gain), phase (timing), timing offsets</li>
+                <li>Why Needed? Components drift (e.g., mirrors warm 0.1K → 1% error); cumulative ~5-10% in runs</li>
+                <li>Types: Absolute (full scale) vs. Relative (arm-to-arm); freq-dependent (e.g., worse at low Hz)</li>
+                <li>Impact: Uncalibrated → biased distances, spins, sky loc. in GW parameter estimation</li>
+              </ul>
+              <figure>
+                  <img
+                    src="images/calibration-schematic.png"
+                    alt="LVK Calibration Schematic"
+                  />
+                  <figcaption style="font-size: 1.4rem">
+                    <a href="https://arxiv.org/abs/2005.02531">Sun et al. 2020</a>
+                  </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>How Calibration Is Done Today</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>Fundamental quantities that define the response of the detector:
+                  <ul>
+                    <li>Amount of power circulating in the Fabry-Pérot cavities</li>
+                    <li>The mass of the cavity mirrors</li>
+                    <li>Frequency tracking</li>
+                    <li>Timing system</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Timing References</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+                <ul>
+                  <li>Use of Global Positioning System (GPS) receivers and local atomic clocks</li>
+                  <li>Provide reliable timing at better than the level of $\pm 1\mu s$</li>
+                </ul>
+                <figure>
+                  <img
+                    src="images/gps_system.jpg"
+                    alt="GPS System"
+                  />
+                  <figcaption>Source:
+                    <a href="https://spaceplace.nasa.gov/gps/en/"
+                      >NASA Science</a
+                    >
+                  </figcaption>
+                </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Direct Force References</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>Photon Calibrators (PCal)</li>
+                <li>Use of radiation pressure to apply a force directly on its given arm cavity optic, displacing it along the arm cavity beam axis</li>
+                <li>The PCal uncertainty for LIGO detectors in the current observing run (O4) is 0.15-0.3%</li>
+              </ul>
+                <figure>
+                  <img
+                    src="images/pcal_demo.png"
+                    alt="Photon Calibration"
+                  />
+                  <figcaption>Credit:
+                    <a href="https://arxiv.org/abs/1608.05055"
+                      >Karki et al. 2016</a
+                    >
+                  </figcaption>
+                </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Direct Force References</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>Newtonian Calibrators (NCal) or Gravity Field Calibrators (GCal)</li>
+                <li>A system of rotating masses that cause periodic changes in the local gravitational field applying a known gravitational force on the end test masses</li>
+                <li>The relative standard uncertainty on the amplitude of the Ncal-induced displacements at Virgo during O4 is 0.17 %</li>
+              </ul>
+                <figure>
+                  <img
+                    src="images/ncal_demo.png"
+                    alt="Photon Calibration"
+                  />
+                  <figcaption>Credit:
+                    <a href="https://arxiv.org/abs/2107.00141"
+                      >Ross et al. 2021</a
+                    >
+                  </figcaption>
+                </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Calibration Error of LIGO Hanford in O3b</h3>
+            <figure>
+              <img
+                src="images/O3b-calibration-error.png"
+                alt="LVK Calibration Error Plot"
+              />
+              <figcaption style="font-size: 1.4rem">
+                Calibration error of LIGO Hanford in O3b (<a
+                  href="https://arxiv.org/abs/2107.00129"
+                  >Sun et al. 2021</a
+                >)
+              </figcaption>
+            </figure>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Astrophysical Calibration</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>
+                  Concept: Use known GW signals with known EM counterparts (e.g.,
+                  BNS mergers) to calibrate detectors by matching observed data to
+                  expected waveforms
+                </li>
+              </ul>
+              <figure>
+                <img src="images/astrophysical_calibration.png" />
+                <figcaption>Credit:
+                  <a href="https://arxiv.org/abs/1511.02758"
+                    >Pitkin et al. 2016</a>
+                </figcaption>
+              </figure>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Astrophysical Calibration</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>
+                  Advantages: Directly ties calibration to astrophysical signals;
+                  can capture time-dependent drifts during observing runs
+                </li>
+                <li>
+                  Limitations:
+                  <ul>
+                    <li>Requires accurate waveform models; rely on EM counterparts
+                  which may not always be available</li>
+                    <li>Limited to specific source types</li>
+                    <li>Only provides amplitude calibration</li>
+                  </ul>
+                </li>
+              </ul>
+              <figure>
+                <img src="images/astrophysical_calibration.png" />
+                <figcaption>Credit:
+                  <a href="https://arxiv.org/abs/1511.02758"
+                    >Pitkin et al. 2016</a>
+                </figcaption>
+              </figure>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <h3>Null Streams in Triangular Detector Network</h3>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Background: Null Streams in Triangular Detectors</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>
+                  ET Geometry: 3 co-located 10-km arms underground;
+                  long-wavelength approx. enables sky-independent null streams
+                </li>
+                <li>
+                  Prior Self-Calibration: Sagnac nulls require templates/GR
+                  (e.g.,
+                  <a href="https://arxiv.org/abs/2009.10212"
+                    >Schutz et al. 2020</a
+                  >); EM-counterpart and GR dependent (<a
+                    href="https://arxiv.org/abs/1511.02758"
+                    >Pitkin et al. 2016</a
+                  >)
+                </li>
+                <li>
+                  Gap: No method uses arbitrary GWs for calibration without
+                  assumptions
+                </li>
+                <li>
+                  Assumption: Focus on relative errors (absolute via
+                  instrumental priors); 8-512 Hz band
+                </li>
+              </ul>
+              <figure>
+                <img src="images/einstein_telescope_triangular_layout.jpg" />
+                <figcaption>
+                  <a
+                    href="https://www.einsteintelescope-emr.eu/wp-content/uploads/2024/05/E-TEST_Conceptual-Design-Report_June_2022-reduced_size.pdf"
+                    >E-TEST Prototype</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>What is null stream?</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>
+                  A null stream is a linear combination of the outputs from a
+                  network of gravitational-wave detectors that cancels out the
+                  gravitational-wave signal, leaving only noise
+                </li>
+                <li>Null stream has been explored for
+                  <ul>
+                    <li>veto</li>
+                    <li>glitch mitigation</li>
+                    <li>search of alternative GW polarizations (My PhD work)</li>
+                  </ul>
+              </ul>
+              <figure>
+                <img src="images/null_stream_demo.png" />
+                <figcaption>Credit: Peter T. H. Pang</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>What is null stream?</h3>
+            <div class="two-column" style="font-size: 1.6rem">
+              <ul>
+                <li>In general, the linear combination depends on the sky location of the source</li>
+                <li>However, for a triangular detector network like ET, the null stream can be constructed in a sky-independent manner due to the symmetry of the detector configuration and the long-wavelength approximation</li>
+                <li>$\tilde{s}_{1}(f) + \tilde{s}_{2}(f) + \tilde{s}_{3}(f) = 0$</li>
+              </ul>
+              <figure>
+                <img src="images/null_stream_demo.png" />
+                <figcaption>Credit: Peter T. H. Pang</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Methods Overview</h3>
+            <div class="two-column" style="font-size: 1.5rem">
+              <ul>
+                <li>Approach: Bayesian inference on null stream data</li>
+                <li>
+                  Key: Projection matrix $P_\mathrm{null}$ that cancels GW $h$
+                </li>
+                <li>
+                  Parameters $\theta$: Cubic splines for amp/phase errors (10
+                  knots); priors from LIGO (~10% amp, 3° phase)
+                </li>
+                <li>
+                  Likelihood: Time-freq Gaussian on wavelet transform of null
+                  stream (ortho. wavelets for stationarity)
+                </li>
+              </ul>
+              <div class="equations" style="font-size: 1.4rem">
+                $d_\mathrm{null} = P_\mathrm{null}(C(f)\tilde{h}(f) +
+                \tilde{n}(f))$<br />
+                $\begin{aligned}&P_\mathrm{null}(f; \theta) \\ &= I - W(f)
+                (W^{\dagger}(f)W(f))^{-1}W^{\dagger}(f) \end{aligned}$<br />
+                $W(f) = S_n^{-1/2}(f) C(f;\theta) F$
               </div>
-              <div>
-                <h4>Videos</h4>
-                <video
-                  width="200"
-                  height="150"
-                  controls
-                  style="border-radius: 8px"
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Methods Overview</h3>
+            <div class="two-column" style="font-size: 1.5rem">
+              <ul>
+                <li>Approach: Bayesian inference on null stream data</li>
+                <li>
+                  Key: Projection matrix $P_\mathrm{null}$ that cancels GW $h$
+                </li>
+                <li>
+                  Parameters $\theta$: Cubic splines for amp/phase errors (10
+                  knots); priors from LIGO (~10% amp, 3° phase)
+                </li>
+                <li>
+                  Likelihood: Time-freq Gaussian on wavelet transform of null
+                  stream (ortho. wavelets for stationarity)
+                </li>
+              </ul>
+              <figure>
+                <img src="images/null_stream_demo.png" />
+                <figcaption>Credit: Peter T. H. Pang</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Implementation and Simulation Setup</h3>
+            <div class="two-column" style="font-size: 1.5rem">
+              <ul>
+                <li>
+                  Tools: <code>nullcal</code> package; <code>Bilby</code> for
+                  inference, <code>dynesty</code> sampler ($10^3$ live points)
+                </li>
+                <li>
+                  Injections: BBH ($m_{1}=35.6 M_{\odot}$, $m_{2}=30.6
+                  M_{\odot}$, SNR 20-300); ET-D noise PSD; multi-signal overlaps
+                </li>
+                <li>
+                  Metric: Generalized std. dev. (GSD) defined as $\bar{\sigma} =
+                  \det(\boldsymbol{\Sigma}_{\theta})^{1/2N}$ ratio
+                  (posterior/prior) for constraint tightness
+                </li>
+                <li>
+                  $\bar{\sigma}$: Typical average standard deviation per parameter
+                </li>
+                <li>
+                  Validation: Recovers injected errors within 90% credible
+                  intervals
+                </li>
+              </ul>
+              <figure>
+                <svg
+                  width="400"
+                  height="350"
+                  viewBox="0 0 400 350"
+                  style="width: 100%; height: auto"
                 >
-                  <source src="videos/sample-video.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+                  <defs>
+                    <marker
+                      id="arrowhead"
+                      markerWidth="10"
+                      markerHeight="7"
+                      refX="9"
+                      refY="3.5"
+                      orient="auto"
+                    >
+                      <polygon points="0 0, 10 3.5, 0 7" fill="white" />
+                    </marker>
+                  </defs>
+                  <!-- Data -->
+                  <rect
+                    x="120"
+                    y="10"
+                    width="160"
+                    height="50"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    rx="5"
+                  />
+                  <text
+                    x="200"
+                    y="40"
+                    text-anchor="middle"
+                    fill="white"
+                    font-size="20"
+                  >
+                    Data
+                  </text>
+                  <!-- Arrow to Wavelet TF -->
+                  <line
+                    x1="200"
+                    y1="60"
+                    x2="200"
+                    y2="90"
+                    stroke="white"
+                    stroke-width="2"
+                    marker-end="url(#arrowhead)"
+                  />
+                  <!-- Wavelet TF -->
+                  <rect
+                    x="120"
+                    y="100"
+                    width="160"
+                    height="50"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    rx="5"
+                  />
+                  <text
+                    x="200"
+                    y="130"
+                    text-anchor="middle"
+                    fill="white"
+                    font-size="20"
+                  >
+                    Wavelet TF
+                  </text>
+                  <!-- Arrow to Likelihood -->
+                  <line
+                    x1="200"
+                    y1="150"
+                    x2="200"
+                    y2="180"
+                    stroke="white"
+                    stroke-width="2"
+                    marker-end="url(#arrowhead)"
+                  />
+                  <!-- Likelihood -->
+                  <rect
+                    x="120"
+                    y="190"
+                    width="160"
+                    height="50"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    rx="5"
+                  />
+                  <text
+                    x="200"
+                    y="220"
+                    text-anchor="middle"
+                    fill="white"
+                    font-size="20"
+                  >
+                    Likelihood
+                  </text>
+                  <!-- Arrow to Posterior -->
+                  <line
+                    x1="200"
+                    y1="240"
+                    x2="200"
+                    y2="270"
+                    stroke="white"
+                    stroke-width="2"
+                    marker-end="url(#arrowhead)"
+                  />
+                  <!-- Posterior on θ -->
+                  <rect
+                    x="100"
+                    y="280"
+                    width="200"
+                    height="50"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    rx="5"
+                  />
+                  <text
+                    x="200"
+                    y="310"
+                    text-anchor="middle"
+                    fill="white"
+                    font-size="20"
+                  >
+                    Posterior on θ
+                  </text>
+                </svg>
+                <figcaption style="font-size: 1.4rem">
+                  Inference Flowchart
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Implementation and Simulation Setup</h3>
+            <figure>
+              <img
+                src="images/calibration_error_setup.png"
+                alt="Simulation Setup Diagram"
+                style="width: 70%"
+              />
+              <figcaption style="font-size: 1.4rem">
+                Simulation Setup
+              </figcaption>
+            </figure>
+          </section>
+
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <h3>Results Overview</h3>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Results Overview</h3>
+            <div style="font-size: 1.6rem">
+              <ul>
+                <li>We begin with a prior based on current LIGO calibration uncertainties (~10% amplitude, ~3° phase)</li>
+                <li>This simulates a follow-up recalibration using null stream after instrumental calibration</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Results: SNR Dependence</h3>
+            <div class="two-column" style="font-size: 1.5rem">
+              <ul>
+                <li>
+                  Finding: Calibration constraints tighten linearly with network
+                  SNR (20-300)
+                </li>
+                <li>
+                  Null Stream SNR: ~10% of network SNR; drives precision (e.g.,
+                  17.6% improvement at high SNR)
+                </li>
+                <li>
+                  Implication: Bright events (e.g., nearby BBH) yield immediate
+                  calibration gains for ET
+                </li>
+              </ul>
+              <figure>
+                <img
+                  src="images/average_standard_deviation_vs_network_snr_total.png"
+                  alt="SNR Dependence Plot"
+                />
+                <figcaption>
+                  FIG. 1 in
+                  <a href="https://arxiv.org/abs/2510.06327"
+                    >Wong et al. 2025</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Results: Multi-Signal Degeneracy Breaking</h3>
+            <div style="font-size: 1.5rem">
+              \[                
+                \begin{aligned}
+                    \tilde{\boldsymbol{s}}(f)
+                    & =
+                    \boldsymbol{C}(f)\boldsymbol{F}\tilde{\boldsymbol{h}}(f) \\
+                    & =
+                    \boldsymbol{C}(f)
+                    \begin{bmatrix}
+                        \boldsymbol{f}_{+} & \boldsymbol{f}_{\times}
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        \tilde{h}_{+}(f) \\
+                        \tilde{h}_{\times}(f)
+                    \end{bmatrix}             \\
+                    & =
+                    \boldsymbol{C}(f)
+                    \begin{bmatrix}
+                        \boldsymbol{f}_{+} & \boldsymbol{f}_{\times}
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        \tilde{h}_{+}(f) \\
+                        i\epsilon\tilde{h}_{+}(f)
+                    \end{bmatrix}         \\
+                    & =
+                    \boldsymbol{C}(f)
+                    (\boldsymbol{f}_{+} + i\epsilon\boldsymbol{f}_{\times})
+                    \tilde{h}_{+}(f)
+                \end{aligned}
+              \]
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Results: Multi-Signal Degeneracy Breaking</h3>
+            <div class="two-column" style="font-size: 1.5rem">
+              <ul>
+                <li>
+                  Single Signal: Polarization degeneracy limits (GSD ratio ~0.82
+                  at SNR=26)
+                </li>
+                <li>
+                  Multiple Overlaps: Ratio drops to 0.65 (3 signals); posteriors
+                  converge to truth
+                </li>
+              </ul>
+              <figure>
+                <img
+                  src="images/average_standard_deviation_vs_number_of_signals_total.png"
+                  alt="Multi-Signal Dependence Plot"
+                />
+                <figcaption>
+                  FIG. 2 in
+                  <a href="https://arxiv.org/abs/2510.06327"
+                    >Wong et al. 2025</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Results: Multi-Signal Degeneracy Breaking</h3>
+            <div class="two-column" style="font-size: 1.5rem">
+              <ul>
+                <li>
+                  Example: 32 Hz posteriors for rel. amp/phase ($1 + \delta
+                  A_{j}$, $\delta \varphi_{j}$) tighten with number of signals
+                </li>
+                <li>
+                  ET Relevance: Dense signal environment naturally breaks
+                  degeneracy
+                </li>
+              </ul>
+              <figure>
+                <img
+                  src="images/corner_relative_calibration_ET2_ET1_32_Hz.png"
+                  alt="Multi-Signal Dependence Plot"
+                />
+                <figcaption>
+                  FIG. 3 in
+                  <a href="https://arxiv.org/abs/2510.06327"
+                    >Wong et al. 2025</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Results: Multi-Signal Degeneracy Breaking</h3>
+            <div class="two-column" style="font-size: 1.5rem">
+              <ul>
+                <li>
+                  Example: 32 Hz posteriors for rel. amp/phase ($1 + \delta
+                  A_{j}$, $\delta \varphi_{j}$) tighten with number of signals
+                </li>
+                <li>
+                  ET Relevance: Dense signal environment naturally breaks
+                  degeneracy
+                </li>
+              </ul>
+              <figure>
+                <img
+                  src="images/corner_relative_calibration_ET3_ET1_32_Hz.png"
+                  alt="Multi-Signal Dependence Plot"
+                />
+                <figcaption>
+                  FIG. 3 in
+                  <a href="https://arxiv.org/abs/2510.06327"
+                    >Wong et al. 2025</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Results: The Three-Signal Case with SNR 300</h3>
+            <figure style="text-align: center">
+              <img
+                src="images/calibration_envelope_ET2_ET1_3_signals.png"
+                alt="Three-Signal High SNR Plot"
+                style="max-width: 90%; height: auto"
+              />
+              <figcaption style="font-size: 1.4rem">
+                FIG. S2 in
+                <a href="https://arxiv.org/abs/2510.06327">Wong et al. 2025</a>
+              </figcaption>
+            </figure>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Results: The Three-Signal Case with SNR 300</h3>
+            <figure style="text-align: center">
+              <img
+                src="images/calibration_envelope_ET3_ET1_3_signals.png"
+                alt="Three-Signal High SNR Plot"
+                style="max-width: 90%; height: auto"
+              />
+              <figcaption style="font-size: 1.4rem">
+                FIG. S2 in
+                <a href="https://arxiv.org/abs/2510.06327">Wong et al. 2025</a>
+              </figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h3>Discussion: Degeneracies and ET Integration</h3>
+            <div class="two-column">
+              <ul style="font-size: 1.5rem; line-height: 1.6">
+                <li>
+                  Degeneracies: Common-mode absolute error (fix w/ lab priors);
+                  polarization (broken by multi-events)
+                </li>
+                <li>
+                  Limitations: Long-wavelength approx. (valid $\lesssim 1000$ Hz
+                  for ET); assumes Gaussian noise
+                </li>
+                <li>
+                  ET Synergies: Complements in-situ methods; test in ET Mock
+                  Data Challenges
+                </li>
+                <li>
+                  Broader: LISA (space nulls). Long-wavelength approx. valid
+                  $\lesssim 1$ mHz
+                </li>
+              </ul>
+              <figure>
+                <img src="images/lisa-image-1050x550.jpg.webp" />
+                <figcaption>
+                  <a
+                    href="https://www.einsteintelescope-emr.eu/en/2023/05/08/dutch-fund-for-large-scale-research-infrastructure-supports-lisa-and-einstein-telescope/"
+                    >The Space Project LISA</a
+                  >
+                </figcaption>
+              </figure>
             </div>
           </section>
         </section>
 
-        <!-- Markdown Example -->
-        <section data-markdown>
-          <textarea data-template>
-                    ## Markdown Support
-
-                    You can write slides in **Markdown**!
-
-                    - Simple and clean syntax
-                    - Easy to maintain
-                    - Version control friendly
-
-                    > "Simplicity is the ultimate sophistication." - Leonardo da Vinci
-
-                    ### Code blocks work too:
-                    ```javascript
-                    const awesome = true;
-                    console.log('This template is', awesome ? 'amazing!' : 'okay');
-                    ```
-                </textarea
-          >
-        </section>
-
-        <!-- Themes Section -->
         <section>
-          <h2>Available Themes</h2>
-          <p>Switch between different themes by changing the CSS link:</p>
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              gap: 1rem;
-              font-size: 0.8em;
-            "
-          >
-            <div>• black (current)</div>
-            <div>• white</div>
-            <div>• league</div>
-            <div>• beige</div>
-            <div>• sky</div>
-            <div>• night</div>
-            <div>• serif</div>
-            <div>• simple</div>
-            <div>• solarized</div>
-          </div>
-          <p>
-            <small
-              >Edit the theme link in index.html to change appearance</small
-            >
-          </p>
-        </section>
+          <h3>Conclusions and Outlook</h3>
 
-        <!-- Getting Started -->
-        <section>
-          <h2>Getting Started</h2>
-          <ol>
-            <li>Clone or use this template repository</li>
-            <li>Run <code>npm install</code> to install dependencies</li>
-            <li>Start development server with <code>npm start</code></li>
-            <li>Edit <code>index.html</code> to create your presentation</li>
-            <li>Customize styles in <code>css/custom.css</code></li>
-          </ol>
-          <p><small>Check the README for detailed instructions</small></p>
+          <ul style="font-size: 1.5rem; line-height: 1.6">
+            <li>
+              Summary: GR/waveform-independent Bayesian null-stream calibration;
+              17.6% precision gain in ET sims
+            </li>
+            <li>
+              Key Advance: Uses all GWs (incl. backgrounds) for non-invasive
+              error constraints
+            </li>
+            <li>Next: Apply to ET MDC; Implication on science goals</li>
+            <li>Advertisement: We will release a package <a href="https://gitlab.et-gw.eu/et-projects/software/gwsim"><code>gwsim</code></a> to simulate MDC data which highlights the full traceability and reproducibility by the end of the year. Stay tuned!</li>
+          </ul>
         </section>
 
         <!-- Thank You -->
-        <section
-          data-background-gradient="linear-gradient(to bottom, #134E5E, #71B280)"
-        >
+        <section>
           <h1>Thank You!</h1>
           <h3>Questions?</h3>
-          <p>
-            <small>
-              <a href="https://github.com/isaac-cf-wong/presentation-template"
-                >GitHub Repository</a
-              >
-              |
-              <a href="https://revealjs.com/">Reveal.js Documentation</a>
-            </small>
-          </p>
+          <div style="font-size: 1.8rem">
+            <ul>
+              <li>
+                <a href="https://arxiv.org/abs/2510.06327">Preprint</a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/isaac-cf-wong/20251121-talk-self-calibration"
+                  >Presentation Slides</a
+                >
+                <i class="fab fa-github" style="margin-left: 0.5rem"></i>
+              </li>
+              <li>
+                <a href="https://github.com/isaac-cf-wong/nullcal"
+                  ><code>nullcal</code></a
+                >
+                <i class="fab fa-github" style="margin-left: 0.5rem"></i> (will
+                be public after the paper is accepted)
+              </li>
+            </ul>
+          </div>
           <aside class="notes">
             This is the final slide. Thank your audience and open the floor for
             questions. Remember to provide links to resources for follow-up.

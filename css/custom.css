@@ -173,3 +173,94 @@
   border-radius: 4px;
   font-weight: bold;
 }
+
+/* Two-column layout for slides */
+
+.two-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.two-column ul {
+  flex: 1;
+  margin: 0;
+}
+
+.two-column figure {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.two-column figure img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.two-column figcaption {
+  font-size: 1.6rem;
+  margin-top: 0.5em;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Equations styling */
+
+.two-column .equations {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Logos on title slide */
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.logos img {
+  height: 80px;
+  width: auto;
+  max-width: 200px;
+}
+
+/* Collaborators on title slide */
+
+.collaborators {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+/* ORCID links */
+
+.orcid-link {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+.orcid-link::after {
+  content: "\f8d2"; /* Font Awesome ORCID icon unicode */
+  font-family: "Font Awesome 6 Brands", sans-serif;
+  font-weight: 400;
+  font-size: 0.8em;
+  margin-left: 2px;
+  vertical-align: middle;
+  color: #a6ce39; /* ORCID green color */
+}
